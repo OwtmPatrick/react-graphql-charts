@@ -7,7 +7,7 @@ import { Dashboard } from '../pages/Dashboard';
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navigate to={Routes.LOGIN} replace />
+    element: <Navigate to={Routes.DASHBOARD} replace />
   },
   {
     path: Routes.LOGIN,

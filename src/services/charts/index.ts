@@ -1,24 +1,32 @@
-import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+import { ApolloClient, InMemoryCache, createHttpLink, from, ApolloLink } from '@apollo/client';
+import { onError } from '@apollo/client/link/error';
+import { router } from '../../routes';
 import { LocalStorageKeys } from '../../constants/localStorage';
+import { Routes } from '../../constants/routes';
 import { BASE_URL } from '../../constants/config';
 
 const httpLink = createHttpLink({
   uri: BASE_URL
 });
 
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem(LocalStorageKeys.AUTH_TOKEN);
-
-  return {
+const authMiddleware = new ApolloLink((operation, forward) => {
+  operation.setContext(({ headers = {} }) => ({
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : ''
+      authorization: `Bearer ${localStorage.getItem(LocalStorageKeys.AUTH_TOKEN) ?? ''}`
     }
-  };
+  }));
+
+  return forward(operation);
+});
+
+const logoutLink = onError(({ graphQLErrors }) => {
+  if (graphQLErrors?.[0].extensions.code === 'UNAUTHENTICATED') {
+    router.navigate(Routes.LOGIN);
+  }
 });
 
 export const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  link: from([logoutLink, authMiddleware, httpLink])
 });
