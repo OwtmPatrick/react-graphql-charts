@@ -1,0 +1,27 @@
+@import '../../../styles/index.scss';
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.content {
+  justify-content: flex-end;
+}
+
+.menu {
+  min-width: 100px;
+  padding: 5px 10px;
+  border: 1px solid $primary;
+  border-radius: 5px;
+  color: $primary;
+}
+
+.skeleton {
+  &:global(.ant-skeleton-input) {
+    min-width: 50px !important;
+    width: 50px !important;
+    height: 16px !important;
+  }
+}

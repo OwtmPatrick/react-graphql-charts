@@ -1,3 +1,5 @@
+import { Header } from '../../area/layout/Header';
+
 export const Dashboard = () => {
-  return <div>dashboard</div>;
+  return <Header />;
 };
