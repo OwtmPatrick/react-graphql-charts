@@ -1,4 +1,4 @@
 export const Routes = {
   LOGIN: '/login',
-  DASHBOARD: 'dashboard'
+  DASHBOARD: '/dashboard'
 } as const;
