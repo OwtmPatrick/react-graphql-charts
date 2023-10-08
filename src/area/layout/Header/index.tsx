@@ -6,11 +6,13 @@ import { useQuery } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { GET_USER } from '../../user/queries';
 import { LocalStorageKeys } from '../../../constants/localStorage';
+import { Routes } from '../../../constants/routes';
+import type { UserData } from '../../user/types';
 
 import styles from './styles.module.scss';
 
 export const Header = () => {
-  const { data } = useQuery(GET_USER);
+  const { data } = useQuery<UserData>(GET_USER);
   const navigate = useNavigate();
 
   const items: MenuProps['items'] = useMemo(
@@ -25,7 +27,7 @@ export const Header = () => {
 
   const logout: MenuProps['onClick'] = () => {
     localStorage.removeItem(LocalStorageKeys.AUTH_TOKEN);
-    navigate('/login');
+    navigate(Routes.LOGIN);
   };
 
   const menuProps = {
