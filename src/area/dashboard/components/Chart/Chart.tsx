@@ -15,6 +15,7 @@ interface ChartProps {
   total: number;
 }
 
+// eslint-disable-next-line react/display-name
 export const Chart: FC<ChartProps> = memo(
   ({ sourceData, data, title, active, setActive, total }) => {
     const onMouseEnter = (e: MouseEvent) => {

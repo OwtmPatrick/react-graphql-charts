@@ -11,6 +11,7 @@ interface SelectedSectionInfoProps {
   title: Chart;
 }
 
+// eslint-disable-next-line react/display-name
 export const SelectedSectionInfo: FC<SelectedSectionInfoProps> = memo(
   ({ data, active, total, title }) => {
     const value = useMemo(() => {
