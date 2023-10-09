@@ -38,7 +38,7 @@ npm run lint:fix
 
 [Demo](https://owtmpatrick.github.io/react-graphql-charts/) (Deployed with [gh-pages](https://pages.github.com))
 
-## Creentials
+## Credentials
 
 usename: UserOne
 password: pass
