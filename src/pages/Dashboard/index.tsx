@@ -21,7 +21,7 @@ export const Dashboard = () => {
         <div className={styles.content}>
           <Row justify="center" gutter={16} className={styles.chartsContainer}>
             {charts.map((chartName) => (
-              <Col sm={12} lg={6} className={styles.col}>
+              <Col key={chartName} sm={12} lg={6} className={styles.col}>
                 {data ? (
                   <Chart data={data?.dashboard[chartName]} title={chartName} />
                 ) : (

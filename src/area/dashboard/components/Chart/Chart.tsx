@@ -52,6 +52,7 @@ export const Chart: FC<ChartProps> = memo(
                 data-key={name}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
+                className={styles.circle}
               />
             );
           })}
