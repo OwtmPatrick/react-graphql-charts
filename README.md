@@ -1,6 +1,6 @@
 # Charts
 
- Simple charts react app 
+Simple charts react app 
 
 ## Start
 
@@ -37,3 +37,8 @@ npm run lint:fix
 ## Demo
 
 [Demo](https://owtmpatrick.github.io/react-graphql-charts/) (Deployed with [gh-pages](https://pages.github.com))
+
+## Creentials
+
+usename: UserOne
+password: pass
