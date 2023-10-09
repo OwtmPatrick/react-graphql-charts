@@ -26,7 +26,7 @@ export const Chart: FC<ChartProps> = memo(
     const onMouseLeave = () => setActive(null);
 
     return (
-      <div style={{ width: 300, position: 'relative' }}>
+      <div className={styles.chart}>
         <svg
           width="100%"
           height="100%"

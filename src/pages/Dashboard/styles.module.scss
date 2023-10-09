@@ -1,3 +1,20 @@
+@import '../../styles/index.scss';
+
 .main {
   padding: 20px;
+}
+
+.content {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.chartsContainer {
+  @media (min-width: 992px) {
+    justify-content: space-between;
+  }
+}
+
+.col {
+  width: 100%;
 }

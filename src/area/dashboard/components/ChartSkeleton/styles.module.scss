@@ -1,0 +1,53 @@
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.chartContainer {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.chart {
+  width: 100% !important;
+  height: 100% !important;
+
+  & .ant-skeleton-image {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  & :global(.anticon) {
+    width: 20%;
+  }
+
+  & :global(.anticon svg) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.legend {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 25px;
+}
+
+.line {
+  width: 100% !important;
+}

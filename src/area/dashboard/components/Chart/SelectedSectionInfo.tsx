@@ -20,8 +20,10 @@ export const SelectedSectionInfo: FC<SelectedSectionInfoProps> = memo(
 
     return (
       <Space direction="vertical" className={styles.selectedSectionInfo}>
-        <Typography>{title}</Typography>
-        <Typography>{value}</Typography>
+        <Typography.Title level={3} className={styles.title}>
+          {title}
+        </Typography.Title>
+        <Typography.Title level={4}>{value}</Typography.Title>
       </Space>
     );
   }

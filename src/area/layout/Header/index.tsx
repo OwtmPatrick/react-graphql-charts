@@ -37,12 +37,14 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Dropdown className={styles.menu} menu={menuProps}>
-        <Space className={styles.content}>
-          {data ? data?.me?.username : <Skeleton.Input className={styles.skeleton} active />}
-          <UserOutlined />
-        </Space>
-      </Dropdown>
+      <div className={styles.content}>
+        <Dropdown className={styles.menu} menu={menuProps}>
+          <Space className={styles.dropdownContent}>
+            {data ? data?.me?.username : <Skeleton.Input className={styles.skeleton} active />}
+            <UserOutlined />
+          </Space>
+        </Dropdown>
+      </div>
     </header>
   );
 };
