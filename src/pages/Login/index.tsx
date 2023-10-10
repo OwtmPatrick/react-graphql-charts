@@ -7,6 +7,7 @@ import { LocalStorageKeys } from '../../constants/localStorage';
 import { Routes } from '../../constants/routes';
 import { LoginForm } from '../../area/login/components/Form';
 import { LOGIN_USER } from '../../area/login/queries';
+import { ThemeToggler } from '../../area/theme/components/ThemeToggler';
 
 import styles from './styles.module.scss';
 
@@ -24,6 +25,9 @@ export const Login: React.FC = () => {
 
   return (
     <Space direction="vertical" align="center" className={styles.wrapper}>
+      <div className={styles.themeToggler}>
+        <ThemeToggler />
+      </div>
       <LoginForm login={login} loading={loading} />
       {error && <Typography.Text type="danger">{error.message}</Typography.Text>}
     </Space>

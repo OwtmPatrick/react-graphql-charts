@@ -7,7 +7,9 @@
 
 .content {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
+  gap: 20px;
   max-width: $container-width;
   margin: 0 auto;
 }

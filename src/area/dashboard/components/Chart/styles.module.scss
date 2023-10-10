@@ -13,6 +13,10 @@
 
   &:global(.active) {
     filter: drop-shadow(0 0 10px rgb(0 0 0 / 0.4));
+
+    &:global(.dark) {
+      filter: drop-shadow(0 0 10px rgba(214, 214, 214, 0.4));
+    }
   }
 }
 
@@ -37,6 +41,10 @@
   &:global(.active span) {
     text-decoration: underline;
     color: $purple;
+  }
+
+  &:global(.active.dark span) {
+    color: $pink;
   }
 }
 

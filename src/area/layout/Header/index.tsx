@@ -9,6 +9,7 @@ import { LocalStorageKeys } from '../../../constants/localStorage';
 import { Routes } from '../../../constants/routes';
 import type { UserData } from '../../user/types';
 import { LogoutConfirmationModal } from '../../user/components/LogoutConfirmationModal';
+import { ThemeToggler } from '../../theme/components/ThemeToggler';
 
 import styles from './styles.module.scss';
 
@@ -42,6 +43,8 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
+        <ThemeToggler />
+
         <Dropdown className={styles.menu} menu={menuProps}>
           <Space className={styles.dropdownContent}>
             {data ? data?.me?.username : <Skeleton.Input className={styles.skeleton} active />}
